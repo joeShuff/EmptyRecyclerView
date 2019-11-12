@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EmptyRecyclerViewApp</string>
+    <string name="no_results">No one found for %s</string>
+</resources>
