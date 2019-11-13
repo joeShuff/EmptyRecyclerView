@@ -77,6 +77,10 @@ class MainActivity : AppCompatActivity(), EmptyViewCreatedListener {
             .append(translatedMessage[1])
 
         view?.emptyText?.text = s
+
+        if (existingUsers.size == 0) {
+            view?.emptyText?.text = "No Users"
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
