@@ -22,4 +22,10 @@
             android:id="@+id/menu_add_empty"
             android:title="Add Empty Layout"
             app:showAsAction="never"/>
+
+    <item
+            android:id="@+id/menu_set_empty_adapter"
+            android:title="Set Empty Adapter"
+            app:showAsAction="never"
+    />
 </menu>

@@ -146,5 +146,6 @@ class EmptyRecyclerView(context: Context, attrs: AttributeSet) : RelativeLayout(
         recyclerView?.adapter = adapter
         setEmptyLayout()
         adapter?.registerAdapterDataObserver(dataObserver)
+        dataObserver.onChanged()
     }
 }

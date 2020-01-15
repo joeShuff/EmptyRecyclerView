@@ -94,6 +94,11 @@ class MainActivity : AppCompatActivity(), EmptyViewCreatedListener {
             R.id.menu_remove -> removeOne()
             R.id.menu_add_empty -> mainRecyclerView.setEmptyLayout(R.layout.example_empty_view)
             R.id.menu_remove_empty -> mainRecyclerView.removeEmptyLayout()
+            R.id.menu_set_empty_adapter -> {
+                existingUsers.clear()
+                adapter = TestAdapter(this, existingUsers)
+                mainRecyclerView.setAdapter(adapter)
+            }
         }
 
         return true
