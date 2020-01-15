@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity(), EmptyViewCreatedListener {
             R.id.menu_set_empty_adapter -> {
                 existingUsers.clear()
                 adapter = TestAdapter(this, existingUsers)
-                mainRecyclerView.setAdapter(adapter)
+                mainRecyclerView.setAdapter(adapter, false) //CHANGE TO TRUE TO SHOW THE EmptyLayout WHEN NEW ADAPTER IS SET
             }
         }
 

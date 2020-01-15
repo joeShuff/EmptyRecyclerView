@@ -140,12 +140,20 @@ class EmptyRecyclerView(context: Context, attrs: AttributeSet) : RelativeLayout(
     /**
      * Sets the adapter of the recycler and attaches the @see<dataObserver> to the adapter to be notified
      * of data changes.
+     *
+     * @param notifyChange : This parameter can be used to choose whether or not the data observer gets notified
+     * of the change in data (which in this case is the setting of a new adapter). If you set to true and the new
+     * adapter is empty, the EmptyView will be shown right away. So set to false if you want to load some data first
+     * before the EmptyView is shown.
+     *
+     * NOTE: All subsequent changes to the dataset WILL notify the data observer, this just says whether the setting of
+     * a new adapter should notify the observer.
      */
-    fun setAdapter(adapter: RecyclerView.Adapter<*>?) {
+    fun setAdapter(adapter: RecyclerView.Adapter<*>?, notifyChange: Boolean = true) {
         Log.i(TAG, "Setting adapter")
         recyclerView?.adapter = adapter
         setEmptyLayout()
         adapter?.registerAdapterDataObserver(dataObserver)
-        dataObserver.onChanged()
+        if (notifyChange) dataObserver.onChanged()
     }
 }
