@@ -49,6 +49,7 @@ class EmptyRecyclerView(context: Context, attrs: AttributeSet) : RelativeLayout(
 
         context.theme.obtainStyledAttributes(attrs, R.styleable.EmptyRecyclerView, 0, 0).apply {
             setEmptyLayout(getResourceId(R.styleable.EmptyRecyclerView_empty_layout, R.layout.default_empty_layout))
+            recyclerView?.background = getDrawable(R.styleable.EmptyRecyclerView_recyclerBackground)
         }
     }
 

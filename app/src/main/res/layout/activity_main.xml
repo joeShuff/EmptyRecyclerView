@@ -3,6 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="#eeeeee"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
@@ -22,11 +23,11 @@
 
     <com.joeshuff.emptyrecyclerview.EmptyRecyclerView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:id="@+id/mainRecyclerView"
+            app:recyclerBackground="#ffffff"
             app:empty_layout="@layout/example_empty_view"
             app:layout_constraintTop_toBottomOf="@id/example_searchField"
-            app:layout_constraintBottom_toBottomOf="parent"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
