@@ -49,6 +49,7 @@ class EmptyRecyclerView(context: Context, attrs: AttributeSet) : RelativeLayout(
 
         context.theme.obtainStyledAttributes(attrs, R.styleable.EmptyRecyclerView, 0, 0).apply {
             setEmptyLayout(getResourceId(R.styleable.EmptyRecyclerView_empty_layout, R.layout.default_empty_layout))
+            recyclerView?.background = getDrawable(R.styleable.EmptyRecyclerView_recyclerBackground)
         }
     }
 
@@ -104,10 +105,10 @@ class EmptyRecyclerView(context: Context, attrs: AttributeSet) : RelativeLayout(
     private fun updateVisibility(items: Int) {
         if (items == 0 && shouldShowEmptyIndicator) {
             emptyContainer?.visibility = View.VISIBLE
-            recyclerView?.visibility = View.INVISIBLE
+            recyclerView?.visibility = View.GONE
             onCreatedListener?.onShown(emptyView)
         } else {
-            emptyContainer?.visibility = View.INVISIBLE
+            emptyContainer?.visibility = View.GONE
             recyclerView?.visibility = View.VISIBLE
         }
     }

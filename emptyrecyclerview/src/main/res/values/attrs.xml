@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="EmptyRecyclerView">
         <attr name="empty_layout" format="reference"/>
+        <attr name="recyclerBackground" format="reference|color"/>
     </declare-styleable>
 </resources>
