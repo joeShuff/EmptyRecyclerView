@@ -104,10 +104,10 @@ class EmptyRecyclerView(context: Context, attrs: AttributeSet) : RelativeLayout(
     private fun updateVisibility(items: Int) {
         if (items == 0 && shouldShowEmptyIndicator) {
             emptyContainer?.visibility = View.VISIBLE
-            recyclerView?.visibility = View.INVISIBLE
+            recyclerView?.visibility = View.GONE
             onCreatedListener?.onShown(emptyView)
         } else {
-            emptyContainer?.visibility = View.INVISIBLE
+            emptyContainer?.visibility = View.GONE
             recyclerView?.visibility = View.VISIBLE
         }
     }
